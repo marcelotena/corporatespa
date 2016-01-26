@@ -114,7 +114,15 @@ add_action( 'widgets_init', 'fastandyours_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fastandyours_scripts() {
+	wp_enqueue_style( 'bootstrapCSS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '1.0', 'all' );
+
 	wp_enqueue_style( 'fastandyours-style', get_stylesheet_uri() );
+
+	wp_enqueue_script( 'angular-core', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js', array('jquery'), '1.0', false );
+
+	wp_enqueue_script( 'ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.16/angular-ui-router.min.js', array('angular-core'), '1.0', false );
+
+	wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/js/ng-scripts-min.js', array('ui-router'), '1.0', false);
 
 	wp_enqueue_script( 'fastandyours-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
