@@ -19,5 +19,9 @@
     "services"
   ],
   "author": "Marcelo Tena",
-  "license": "GPL-2.0"
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
 }
