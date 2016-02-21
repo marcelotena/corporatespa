@@ -32,3 +32,5 @@ gulp.task('compass', function() {
         .pipe(gulp.dest('assets/css/'));
     gutil.log('>> SASS files processed <<');
 });
+
+gulp.task('default', ['js', 'compass']);
