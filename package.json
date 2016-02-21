@@ -1,0 +1,23 @@
+{
+  "name": "corporatespa",
+  "version": "1.0.0",
+  "description": "WordPress corporate theme with services and portfolio sections.",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "keywords": [
+    "wordpress",
+    "corporate",
+    "theme",
+    "angularjs",
+    "spa",
+    "single",
+    "page",
+    "application",
+    "portfolio",
+    "services"
+  ],
+  "author": "Marcelo Tena",
+  "license": "GPL-2.0"
+}
