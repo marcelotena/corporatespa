@@ -1,6 +1,16 @@
 var gulp = require('gulp'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    concat = require('gulp-concat');
 
-gulp.task('log', function() {
-    gutil.log('Gulp working!');
+var jsSources = [
+    'assets/js/customizer.js',
+    'assets/js/navigation.js',
+    'assets/js/skip-link-focus-fix.js'
+]
+
+gulp.task('js', function() {
+    gulp.src(jsSources)
+        .pipe(concat('script.js'))
+        .pipe(gulp.dest('assets/js/min/'));
+    gutil.log('> Scripts joined');
 });
