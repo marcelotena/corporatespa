@@ -1,4 +1,4 @@
-# Corporate SPA WordPress theme based on underscores.me
+# Corporate SPA WordPress theme
 
 Single page application developed with AngularJS and Underscores starter theme by Automattic.
 
