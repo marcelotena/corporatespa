@@ -33,4 +33,9 @@ gulp.task('compass', function() {
     gutil.log('>> SASS files processed <<');
 });
 
-gulp.task('default', ['js', 'compass']);
+gulp.task('watch', function() {
+    gulp.watch(jsSources, ['js']);
+    gulp.watch('assets/stylesheets/**/*.scss', ['compass']);
+});
+
+gulp.task('default', ['js', 'compass', 'watch']);
