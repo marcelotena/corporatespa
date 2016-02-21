@@ -117,7 +117,26 @@ add_action( 'widgets_init', 'corporatespa_widgets_init' );
 function corporatespa_scripts() {
 	wp_enqueue_style( 'corporatespa-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'corporatespa-allscripts', get_template_directory_uri() . '/assets/js/min/script.js', array($this, 'jquery'), '20120206', true );
+	wp_enqueue_script( 'corporatespa-customizer', get_stylesheet_directory_uri() . '/assets/js/customizer.js', array($this, 'jquery'), '1.0', true);
+
+	wp_enqueue_script( 'angular-core', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js' , '1.0', false);
+
+	wp_enqueue_script( 'angular-ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js', array('angular-core'), '1.0', false );
+
+	wp_enqueue_script( 'angular-resource', 'https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.0/angular-resource.min.js', array('angular-core'), '1.0', false );
+
+	wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/assets/js/min/script.js', array('jquery', 'angular-core', 'angular-ui-router'), '1.0', true );
+
+	wp_localize_script('ngScripts', 'appInfo',
+		array(
+
+			'api_url'				=> rest_get_url_prefix() . '/wp/v2/',
+			'template_directory'	=> get_template_directory_uri() . '/assets/js/angular_app/',
+			'nonce'					=> wp_create_nonce( 'wp_rest' ),
+			'is_admin'				=> current_user_can('administrator')
+
+		)
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

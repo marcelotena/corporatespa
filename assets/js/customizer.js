@@ -4,8 +4,6 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-$ = require('jquery');
-
 ( function( $ ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {

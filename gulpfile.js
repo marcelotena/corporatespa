@@ -5,9 +5,15 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 var jsSources = [
-    'assets/js/customizer.js',
     'assets/js/navigation.js',
-    'assets/js/skip-link-focus-fix.js'
+    'assets/js/skip-link-focus-fix.js',
+    'assets/js/angular_app/app.module.js',
+    'assets/js/angular_app/app.route.js',
+    'assets/js/angular_app/components/post.factory.js',
+    'assets/js/angular_app/components/postlistctrl.controller.js',
+    'assets/js/angular_app/components/detailctrl.controller.js',
+    'assets/js/angular_app/components/totrusted.filter.js',
+    'assets/js/angular_app/app.config.js'
 ];
 
 var sassSources = [
