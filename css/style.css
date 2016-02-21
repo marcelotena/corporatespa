@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -271,7 +272,7 @@ input,
 select,
 textarea {
   color: #666;
-  font-family: sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -285,7 +286,7 @@ h5,
 h6 {
   clear: both;
   color: #666;
-  font-family: serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2;
 }
 

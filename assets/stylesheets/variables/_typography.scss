@@ -1,5 +1,8 @@
-$font__main: sans-serif;
-$font__heading: serif;
+// Font import
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+$font__main: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+$font__heading: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
