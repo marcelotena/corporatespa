@@ -114,58 +114,78 @@
  */
 
 angular
-    .module("corporatespaApp", ['ui.router', 'ngResource']);
+    .module("corporatespaApp", ['ui.router', 'ngResource', 'ngMaterial']);
 
 
-angular
-    .module('corporatespaApp')
-    .factory('postFactory', function($resource) {
-        return $resource( appInfo.api_url + 'posts/:ID', {
-            ID: '@id'
-        } )
-    });
-angular
-    .module('corporatespaApp')
-    .controller('PostListCtrl', ['$scope', 'postFactory', function($scope, postFactory) {
-        $scope.page_title = 'Entradas del Blog';
+(function() {
 
-        postFactory.query(function(res){
-            $scope.posts = res;
-        });
-
-    }]);
-angular
-    .module('corporatespaApp')
-    .controller('DetailCtrl', ['$scope', '$stateParams', 'postFactory', function($scope, $stateParams, postFactory) {
-        console.log($stateParams);
-        postFactory.get( { ID: $stateParams.id }, function(res) {
-            $scope.post = res;
-        });
-    }]);
-angular
-    .module('corporatespaApp')
-    .filter('to_trusted', ['$sce', function($sce) {
-        return(function(text) {
-            return $sce.trustAsHtml(text);
-        });
-    }]);
-angular
-    .module('corporatespaApp')
-    .config( function( $stateProvider, $urlRouterProvider ) {
-
-        $urlRouterProvider.otherwise('/');
-
-        $stateProvider
-            .state( 'list', {
-                url: '/',
-                controller: 'PostListCtrl',
-                templateUrl: appInfo.template_directory + 'templates/list.html'
+    angular
+        .module('corporatespaApp')
+        .factory('postFactory', function ($resource) {
+            return $resource(appInfo.api_url + 'posts/:ID', {
+                ID: '@id'
             })
-            .state( 'detail', {
-                url: '/posts/:id',
-                controller: 'DetailCtrl',
-                templateUrl: appInfo.template_directory + 'templates/detail.html'
+        });
+
+})();
+(function() {
+
+    angular
+        .module('corporatespaApp')
+        .controller('PostListCtrl', ['$scope', 'postFactory', function ($scope, postFactory) {
+            $scope.page_title = 'Entradas del Blog';
+
+            postFactory.query(function (res) {
+                $scope.posts = res;
             });
 
-    });
+        }]);
+
+})();
+(function() {
+
+    angular
+        .module('corporatespaApp')
+        .controller('DetailCtrl', ['$scope', '$stateParams', 'postFactory', function ($scope, $stateParams, postFactory) {
+            console.log($stateParams);
+            postFactory.get({ID: $stateParams.id}, function (res) {
+                $scope.post = res;
+            });
+        }]);
+
+})();
+(function() {
+
+    angular
+        .module('corporatespaApp')
+        .filter('to_trusted', ['$sce', function ($sce) {
+            return (function (text) {
+                return $sce.trustAsHtml(text);
+            });
+        }]);
+
+})();
+(function() {
+
+    angular
+        .module('corporatespaApp')
+        .config(function ($stateProvider, $urlRouterProvider) {
+
+            $urlRouterProvider.otherwise('/');
+
+            $stateProvider
+                .state('list', {
+                    url: '/',
+                    controller: 'PostListCtrl',
+                    templateUrl: appInfo.template_directory + 'templates/list.html'
+                })
+                .state('detail', {
+                    url: '/posts/:id',
+                    controller: 'DetailCtrl',
+                    templateUrl: appInfo.template_directory + 'templates/detail.html'
+                });
+
+        });
+
+})();
 },{}]},{},[1])

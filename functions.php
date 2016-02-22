@@ -115,11 +115,20 @@ add_action( 'widgets_init', 'corporatespa_widgets_init' );
  * Enqueue scripts and styles.
  */
 function corporatespa_scripts() {
+
+	wp_enqueue_style( 'angular-material-style', 'https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.5/angular-material.min.css', '1.0');
+
 	wp_enqueue_style( 'corporatespa-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'corporatespa-customizer', get_stylesheet_directory_uri() . '/assets/js/customizer.js', array($this, 'jquery'), '1.0', true);
 
 	wp_enqueue_script( 'angular-core', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js' , '1.0', false);
+
+	wp_enqueue_script( 'angular-animate', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js', true);
+
+	wp_enqueue_script( 'angular-aria', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-aria.js', true);
+
+	wp_enqueue_script( 'angular-material', 'https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.5/angular-material.min.js', array('angular-core', 'angular-animate', 'angular-aria'), true);
 
 	wp_enqueue_script( 'angular-ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js', array('angular-core'), '1.0', false );
 
