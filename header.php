@@ -16,6 +16,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+	<base href="/">
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -48,10 +51,11 @@
 
 	<?php corporatespa_the_site_logo(); ?>
 
-	<nav id="site-navigation" class="main-navigation" role="navigation">
-	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corporatespa' ); ?></button>
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-</nav><!-- #site-navigation -->
+	<nav id="site-navigation" class="main-navigation" role="navigation" ng-controller="navbarCtrl">
+		<li ng-repeat="menu in menus">
+			<a href="{{menu.url}}">{{menu.title}}</a>
+		</li>
+	</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
 

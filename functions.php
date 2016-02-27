@@ -139,7 +139,7 @@ function corporatespa_scripts() {
 	wp_localize_script('ngScripts', 'appInfo',
 		array(
 
-			'api_url'				=> rest_get_url_prefix() . '/wp/v2/',
+			'api_url'				=> rest_get_url_prefix(),
 			'template_directory'	=> get_template_directory_uri() . '/assets/js/angular_app/',
 			'nonce'					=> wp_create_nonce( 'wp_rest' ),
 			'is_admin'				=> current_user_can('administrator')

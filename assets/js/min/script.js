@@ -122,12 +122,64 @@ angular
     angular
         .module('corporatespaApp')
         .factory('postFactory', function ($resource) {
-            return $resource(appInfo.api_url + 'posts/:ID', {
+            return $resource(appInfo.api_url + '/wp/v2/posts/:ID', {
                 ID: '@id'
             })
         });
 
 })();
+/**
+ * Created by marcelotena on 26/2/16.
+ * Service to load WP Menus
+ */
+
+(function(){
+
+    angular
+        .module('corporatespaApp')
+        .service('menuService', ['$http', '$q', function($http, $q) {
+
+            return {
+                getMenus: getMenus
+            };
+
+            function getMenus() {
+
+                var defered = $q.defer();
+                var promise = defered.promise;
+
+                $http.get(appInfo.api_url + '/wp-api-menus/v2/menu-locations/top-menu')
+                    .success(function(data) {
+                        defered.resolve(data);
+                    })
+                    .error(function(err) {
+                        defered.reject(err);
+                    });
+
+                return promise;
+
+            }
+
+        }]);
+
+})();
+
+/**
+ * Created by marcelotena on 26/2/16.
+ * Main Navbar controller
+ */
+
+angular.module('corporatespaApp')
+    .controller('navbarCtrl', ['$scope', '$stateParams', 'menuService', function ($scope, $stateParams, menuService) {
+
+        menuService
+            .getMenus()
+            .then( function(data) {
+                $scope.menus = data;
+            });
+
+    }]);
+
 (function() {
 
     angular
