@@ -221,7 +221,7 @@ angular.module('corporatespaApp')
 
     angular
         .module('corporatespaApp')
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(function ($stateProvider, $urlRouterProvider, $mdIconProvider) {
 
             $urlRouterProvider.otherwise('/');
 
@@ -236,6 +236,10 @@ angular.module('corporatespaApp')
                     controller: 'DetailCtrl',
                     templateUrl: appInfo.template_directory + 'templates/detail.html'
                 });
+
+            $mdIconProvider
+                .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
+                .defaultIconSet('img/icons/sets/core-icons.svg', 24);
 
         });
 

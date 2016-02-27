@@ -49,12 +49,28 @@
 		<?php } ?>
 	</header><!-- #masthead -->
 
-	<?php corporatespa_the_site_logo(); ?>
+	<div class="site-logo"></div>
 
 	<nav id="site-navigation" class="main-navigation" role="navigation" ng-controller="navbarCtrl">
-		<li ng-repeat="menu in menus">
-			<a href="{{menu.url}}">{{menu.title}}</a>
-		</li>
+		<md-fab-toolbar md-open="false" count="0"
+						md-direction="left">
+			<md-fab-trigger class="align-with-text">
+				<md-button aria-label="menu" class="md-fab md-primary">
+					<md-icon md-svg-src="<?php echo get_stylesheet_directory_uri() . '/assets/images/icons/menu.svg'; ?>"></md-icon>
+				</md-button>
+			</md-fab-trigger>
+			<md-toolbar>
+				<md-fab-actions class="md-toolbar-tools">
+					<ul>
+						<li ng-repeat="menuitem in menus">
+							<md-button aria-label="{{menuitem.title}}" class="md-icon-button">
+								<a href="{{menuitem.url}}"><md-icon md-svg-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/{{menuitem.title}}.svg"></md-icon></a>
+							</md-button>
+						</li>
+					</ul>
+				</md-fab-actions>
+			</md-toolbar>
+		</md-fab-toolbar>
 	</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->

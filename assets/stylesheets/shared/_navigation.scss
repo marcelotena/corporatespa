@@ -50,3 +50,34 @@ a {
 }
 
 @import "../../../components/social-menu/social-menu";
+
+.site-logo {
+	display: block;
+	float: left;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	background: blue;
+	width: 150px;
+	height: 50px;
+}
+
+.main-navigation {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	ul {
+		display: block;
+	}
+}
+
+md-fab-toolbar md-toolbar .md-toolbar-tools {
+	height: 64px;
+	max-height: 64px;
+	float: left;
+	ul {
+		float: left;
+		padding-left: 0;
+	}
+}

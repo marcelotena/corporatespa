@@ -444,13 +444,12 @@ input[type="submit"] {
   border-color: #ccc;
   border-radius: 3px;
   background: #fff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  box-shadow: none;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
   padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  text-shadow: none;
 }
 button:hover,
 input[type="button"]:hover,
@@ -458,7 +457,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
   background: #f4f4f4;
   border-color: #444;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: none;
 }
 button:active, button:focus,
 input[type="button"]:active,
@@ -469,7 +468,7 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
   background: #ccc;
   border-color: #444;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 input[type="text"],
@@ -771,6 +770,37 @@ a:hover, a:active {
 
 .social-links ul a:before {
   content: '\f415';
+}
+
+.site-logo {
+  display: block;
+  float: left;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: blue;
+  width: 150px;
+  height: 50px;
+}
+
+.main-navigation {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.main-navigation ul {
+  display: block;
+}
+
+md-fab-toolbar md-toolbar .md-toolbar-tools {
+  height: 64px;
+  max-height: 64px;
+  float: left;
+}
+md-fab-toolbar md-toolbar .md-toolbar-tools ul {
+  float: left;
+  padding-left: 0;
 }
 
 /*--------------------------------------------------------------
