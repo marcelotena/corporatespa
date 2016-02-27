@@ -773,17 +773,19 @@ a:hover, a:active {
 }
 
 .site-logo {
+  z-index: 1;
   display: block;
   float: left;
   position: fixed;
   top: 10px;
   left: 10px;
-  background: blue;
+  background: transparent;
   width: 150px;
   height: 50px;
 }
 
 .main-navigation {
+  z-index: 1;
   width: 100%;
   position: fixed;
   top: 0;
