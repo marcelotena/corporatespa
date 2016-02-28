@@ -1087,3 +1087,23 @@ object {
 /* min-width 1441px, xlarge screens */
 /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 /* min-width 1921px, xxlarge screens */
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.site-description {
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 100px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.jetpack-portfolio {
+  float: none;
+  width: 100%;
+}
+
+.portfolio-entry-header {
+  font-size: 80%;
+}

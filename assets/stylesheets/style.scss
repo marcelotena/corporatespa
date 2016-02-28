@@ -111,3 +111,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media queries
 --------------------------------------------------------------*/
 @import "shared/queries";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/header";
+@import "components/portfolio";

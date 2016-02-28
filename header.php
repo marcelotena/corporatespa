@@ -36,8 +36,8 @@
 
 		<div class="header-wrapper">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: <?php if (! empty( $header_image )) { echo 'white';} ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description" style="color: <?php if (! empty( $header_image )) { echo 'white';} ?>"><?php bloginfo( 'description' ); ?></h2>
 			</div><!-- .site-branding -->
 		</div><!-- .header-wrapper -->
 
