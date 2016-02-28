@@ -177,3 +177,118 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom post types: Services and Portfolio
+ */
+
+// Register Custom Post Type: Services
+function cpt_services() {
+
+	$labels = array(
+		'name'                  => _x( 'Services', 'Post Type General Name', 'corporatespa' ),
+		'singular_name'         => _x( 'Service', 'Post Type Singular Name', 'corporatespa' ),
+		'menu_name'             => __( 'Services', 'corporatespa' ),
+		'name_admin_bar'        => __( 'Services', 'corporatespa' ),
+		'archives'              => __( 'Service Archives', 'corporatespa' ),
+		'parent_item_colon'     => __( 'Parent Service:', 'corporatespa' ),
+		'all_items'             => __( 'All Services', 'corporatespa' ),
+		'add_new_item'          => __( 'Add New Service', 'corporatespa' ),
+		'add_new'               => __( 'Add New', 'corporatespa' ),
+		'new_item'              => __( 'New Service', 'corporatespa' ),
+		'edit_item'             => __( 'Edit Service', 'corporatespa' ),
+		'update_item'           => __( 'Update Service', 'corporatespa' ),
+		'view_item'             => __( 'View Service', 'corporatespa' ),
+		'search_items'          => __( 'Search Service', 'corporatespa' ),
+		'not_found'             => __( 'Not found', 'corporatespa' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'corporatespa' ),
+		'featured_image'        => __( 'Featured Image', 'corporatespa' ),
+		'set_featured_image'    => __( 'Set featured image', 'corporatespa' ),
+		'remove_featured_image' => __( 'Remove featured image', 'corporatespa' ),
+		'use_featured_image'    => __( 'Use as featured image', 'corporatespa' ),
+		'insert_into_item'      => __( 'Insert into service', 'corporatespa' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this service', 'corporatespa' ),
+		'items_list'            => __( 'Services list', 'corporatespa' ),
+		'items_list_navigation' => __( 'Services list navigation', 'corporatespa' ),
+		'filter_items_list'     => __( 'Filter services list', 'corporatespa' ),
+	);
+	$args = array(
+		'label'                 => __( 'Services', 'corporatespa' ),
+		'description'           => __( 'Services offered by the company, to be displayed after the Intro Section.', 'corporatespa' ),
+		'labels'                => $labels,
+		'supports'              => array( ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 0,
+		'menu_icon'				=> 'dashicons-list-view',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'services', $args );
+
+}
+add_action( 'init', 'cpt_services', 0 );
+
+
+// Register Custom Post Type: Portfolio
+function cpt_portfolio() {
+
+	$labels = array(
+		'name'                  => _x( 'Portfolio', 'Post Type General Name', 'corporatespa' ),
+		'singular_name'         => _x( 'Project', 'Post Type Singular Name', 'corporatespa' ),
+		'menu_name'             => __( 'Portfolio', 'corporatespa' ),
+		'name_admin_bar'        => __( 'Portfolio', 'corporatespa' ),
+		'archives'              => __( 'Portfolio Archives', 'corporatespa' ),
+		'parent_item_colon'     => __( 'Parent project:', 'corporatespa' ),
+		'all_items'             => __( 'All Projects', 'corporatespa' ),
+		'add_new_item'          => __( 'Add New Project', 'corporatespa' ),
+		'add_new'               => __( 'Add New Project', 'corporatespa' ),
+		'new_item'              => __( 'New Project', 'corporatespa' ),
+		'edit_item'             => __( 'Edit Project', 'corporatespa' ),
+		'update_item'           => __( 'Update Project', 'corporatespa' ),
+		'view_item'             => __( 'View Project', 'corporatespa' ),
+		'search_items'          => __( 'Search Projects', 'corporatespa' ),
+		'not_found'             => __( 'Not found', 'corporatespa' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'corporatespa' ),
+		'featured_image'        => __( 'Featured Image', 'corporatespa' ),
+		'set_featured_image'    => __( 'Set featured image', 'corporatespa' ),
+		'remove_featured_image' => __( 'Remove featured image', 'corporatespa' ),
+		'use_featured_image'    => __( 'Use as featured image', 'corporatespa' ),
+		'insert_into_item'      => __( 'Insert into project', 'corporatespa' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this project', 'corporatespa' ),
+		'items_list'            => __( 'Project list', 'corporatespa' ),
+		'items_list_navigation' => __( 'Project list navigation', 'corporatespa' ),
+		'filter_items_list'     => __( 'Filter project list', 'corporatespa' ),
+	);
+	$args = array(
+		'label'                 => __( 'Portfolio', 'corporatespa' ),
+		'description'           => __( 'Project portfolio, to be displayed after the Services section.', 'corporatespa' ),
+		'labels'                => $labels,
+		'supports'              => array( ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 1,
+		'menu_icon'				=> 'dashicons-layout',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'portfolio', $args );
+
+}
+add_action( 'init', 'cpt_portfolio', 0 );
