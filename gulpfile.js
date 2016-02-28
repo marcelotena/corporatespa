@@ -11,6 +11,7 @@ var jsSources = [
     'assets/js/angular_app/app.route.js',
     'assets/js/angular_app/components/post.factory.js',
     'assets/js/angular_app/components/menu.service.js',
+    'assets/js/angular_app/components/fillheight.directive.js',
     'assets/js/angular_app/components/navbarctrl.controller.js',
     'assets/js/angular_app/components/postlistctrl.controller.js',
     'assets/js/angular_app/components/detailctrl.controller.js',

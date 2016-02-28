@@ -4,4 +4,4 @@
  */
 
 angular
-    .module("corporatespaApp", ['ui.router', 'ngResource', 'ngMaterial']);
+    .module("corporatespaApp", ['ui.router', 'ngResource', 'ngMaterial', 'fillHeight']);

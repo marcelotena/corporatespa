@@ -25,7 +25,7 @@
 <div id="page" class="hfeed site" ng-app="corporatespaApp">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'corporatespa' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner"
+	<header fill-height id="masthead" class="site-header" role="banner"
 			style='background:url("<?php
 				$header_image = get_header_image();
 
