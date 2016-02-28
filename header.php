@@ -25,28 +25,22 @@
 <div id="page" class="hfeed site" ng-app="corporatespaApp">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'corporatespa' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner"
+			style='background:url("<?php
+				$header_image = get_header_image();
 
-		<?php
-		// You can upload a custom header and it'll output in a smaller logo size.
-		$header_image = get_header_image();
+				if ( ! empty( $header_image ) ) {
+					header_image();
+				}
+			?>"); background-size: cover;'>
 
-		if ( ! empty( $header_image ) ) { ?>
-			<div id="header-image" class="custom-header">
-				<div class="header-wrapper">
-					<div class="site-branding">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					</div><!-- .site-branding -->
-				</div><!-- .header-wrapper -->
-				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-			</div><!-- #header-image .custom-header -->
-		<?php } else { ?>
+		<div class="header-wrapper">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div><!-- .site-branding -->
-		<?php } ?>
+		</div><!-- .header-wrapper -->
+
 	</header><!-- #masthead -->
 
 	<div class="site-logo"></div>
@@ -62,7 +56,7 @@
 			<md-toolbar>
 				<md-fab-actions class="md-toolbar-tools">
 					<ul>
-						<li ng-repeat="menuitem in menus">
+						<li ng-repeat="menuitem in menus" class="{{menuitem.title}}_li">
 							<md-button aria-label="{{menuitem.title}}" class="md-icon-button">
 								<a href="{{menuitem.url}}"><md-icon md-svg-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/{{menuitem.title}}.svg"></md-icon></a>
 							</md-button>

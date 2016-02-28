@@ -23,8 +23,8 @@ function corporatespa_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'corporatespa_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1920,
+		'height'                 => 1278,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'corporatespa_header_style',
 	) ) );
