@@ -216,7 +216,14 @@ function cpt_services() {
 		'label'                 => __( 'Services', 'corporatespa' ),
 		'description'           => __( 'Services offered by the company, to be displayed after the Intro Section.', 'corporatespa' ),
 		'labels'                => $labels,
-		'supports'              => array( ),
+		'supports'              => array( 
+									'title',
+									'author',
+									'excerpt',
+									'editor',
+									'thumbnail',
+									'revisions' 
+								),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -272,7 +279,14 @@ function cpt_portfolio() {
 		'label'                 => __( 'Portfolio', 'corporatespa' ),
 		'description'           => __( 'Project portfolio, to be displayed after the Services section.', 'corporatespa' ),
 		'labels'                => $labels,
-		'supports'              => array( ),
+		'supports'              => array( 
+									'title',
+									'author',
+									'excerpt',
+									'editor',
+									'thumbnail',
+									'revisions' 
+								),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
